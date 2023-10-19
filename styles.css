@@ -1,0 +1,49 @@
+/* reset some defualt browser styles*/
+body,
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+/*style the card container*/
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    /* add perspective for the 3D effect*/
+}
+
+/* style the card inner container for 3D transformation*/
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    /*add a smooth transition effect*/
+}
+
+/*style the card size (front and back)*/
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+/*style the front of the card*/
+.card-front {
+    background-color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    /*anitialy hide the backface with 180deg rotation*/
+}
+
+/*add a hover effect to flip the card*/
+.card:hover,
+.card-inner {
+    transform: rotateY(180deg);
+    /*rotate the card on hover to reveal the back*/
+}
